@@ -50,7 +50,7 @@ Here is the video for you to go through and learn:
 ### ✅ Task 3: Experiment with Different JavaScript Loading Methods
 1. Add the script in `<head>`, end of the `<body>` tag.
 2. Use `async` and `defer` attributes
-3. Understand the difefrences.
+3. Understand the differences.
 
 ### ✅ Task 4: Take Notes and Submit
 1. Hope you have captured a good notes of your learning.
