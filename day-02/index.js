@@ -44,8 +44,6 @@ salary = null;
     };
     console.log(student.name); // Output: Alice   
 
-    let arr = [1,2,4,5]
-    
     
 let a = 10;
 let b = a; // 10
@@ -80,3 +78,12 @@ if (student2.isEnrolled) {
     console.log(student3); // Output: { name: "John", age: 30, favoriteLanguage: "Java", isEnrolled: false }
   }
 }
+    {
+    let arr = [1,2,4,5]
+    }
+const arr = Array(5).fill('banana');
+
+arr[3] = 'apple';
+
+console.log(arr); // Output: [ 'banana', 'banana', 'banana', 'apple', 'banana' ]
+arr = [1, 2, 3, 4, 5]; // This will throw an error because arr is declared with const
