@@ -12,7 +12,7 @@ let b = 5;
 let f_name = "tapas"
 let l_name = "adhikary"
 
-console.log(f_name + l_name) // don't do this!
+console.log(f_name + l_name) // don't do this because it will not add space between first and last name
 
 console.log(a + b);
 console.log(a - b);
@@ -87,7 +87,7 @@ console.log(false || true); // true
 
 console.log("Cow" || "Horse"); // "Cow"
 
-comsole.log(!false)
+console.log(!false)
 
 let a1 = null ?? 1; // 1
 let a2 = undefined ?? 3 // 3
@@ -105,37 +105,37 @@ age >= 60 ? "Senior Citizen" : "Non Senior Citizen";
 
 
 // Bitwise operators
-console.log("**** Bitwise operators ****")
+console.log("**** Bitwise operators ****");
 
 // 10 in decimal
 // 10 in 32 bits representation of 0, 1
 
 // & | ^ ~ << >>
 
-15 & 9 = 9
-1111 & 1001 = 1001 = 1 * (2 ** 0) + 0 * (2 ** 1) + 0 * (2 ** 2) + 1 * (2 ** 3)
+// 15 & 9 = 9
+// 1111 & 1001 = 1001 = 1 * (2 ** 0) + 0 * (2 ** 1) + 0 * (2 ** 2) + 1 * (2 ** 3)
 
-15 / 2 = 7 (1)
-7 / 2 = 3 (1)
-3 / 2 = 1 (1)
+// 15 / 2 = 7 (1)
+// 7 / 2 = 3 (1)
+// 3 / 2 = 1 (1)
 
-9/2 = 4 (1)
-4/2 = 2 (0)
-2/2 = 1 (0)
+// 9/2 = 4 (1)
+// 4/2 = 2 (0)
+// 2/2 = 1 (0)
 
-15 | 9 = 15
+// 15 | 9 = 15
 
-1111 | 1001 = 1111
+// 1111 | 1001 = 1111
 
-15 ^ 9 = 6
-1111 ^ 1001 = 0110
+// 15 ^ 9 = 6
+// 1111 ^ 1001 = 0110
 
-9 << 2 = 36
+// 9 << 2 = 36
 
-1001 << 2 = 100100
+// 1001 << 2 = 100100
 
-9 >> 2 = 2
-1001 >> 2 = 0010
+// 9 >> 2 = 2
+// 1001 >> 2 = 0010
 
 
 // Grouiping
@@ -146,29 +146,30 @@ let q = 2;
 let r = 3;
 
 console.log(p + q * r) // 1 + 2 * 3 = 1 + 6 = 7
-p + (q * r) // 7
+// p + (q * r) // 7
 
-(p + q) * r // (1 + 2) * 3 = 3 * 3 = 9
+// (p + q) * r // (1 + 2) * 3 = 3 * 3 = 9
 
-p * r + q * r = 1 * 3 + 2 * 3 = 3 + 6 = 9
+// p * r + q * r //= 1 * 3 + 2 * 3 = 3 + 6 = 9
 
-p * (r + q) * r
+// p * (r + q) * r
 
 
 // typeof
 console.log("**** typeof ****")
 
 
-typeof "tapas"; // "string"
-typeof false; // "boolean"
+// typeof "tapas"; // "string"
+// typeof false; // "boolean"
 
-let size = 100;
-typeof size; // "number"
+// let size = 100;
+// typeof size; // "number"
 
-const numbers = [1,2,3,4]
-typeof numbers; // "object"
+// const numbers = [1,2,3,4]
+// typeof numbers; // "object"
 
-typeof null; // "object"
+const nullValue = null;
+console.log(typeof nullValue); // "object" classic bug in JavaScript, null is not an object, but typeof returns "object" for historical reasons.
 
 
 // instanceof
@@ -176,3 +177,14 @@ console.log("**** instanceof ****")
 
 // object instanceof objectType
 
+let arr = [1,2,3,4]
+console.log(arr instanceof Array) // true
+let obj = {name: "tapas"}
+console.log(obj instanceof Object) // true
+console.log(null instanceof Object) // false
+console.log(undefined instanceof Object) // false
+// the difference between typeof and instanceof is that typeof returns a string indicating 
+// the type of the operand, while instanceof checks if an object is an instance of a specific 
+// constructor or class.
+console.log(Object)
+console.log(Array)
