@@ -51,3 +51,32 @@ let a = 10;
 let b = a; // 10
 b = 20; // 20
 console.log(a); // 10 (original remains unchanged)
+
+let student2 = {
+  name: "Tanmay",
+  age: 33,
+  favoriteLanguage: "JavaScript",
+  isEnrolled: true
+}
+
+student2.age = 24; // Modifying the age property of the student2 object
+console.log(student2.age); // Output: 24
+
+const student3 = {
+  name: "John",
+  age: 30,
+  favoriteLanguage: "Python",
+  isEnrolled: false
+};
+
+if (student2.isEnrolled) {
+  try {
+    student3.favoriteLanguage = "Java"; // Modifying the favoriteLanguage property of the student3 object
+    console.log(student3.favoriteLanguage); // Output: Java
+    student3 = { name: "Jane", age: 28, favoriteLanguage: "C++", isEnrolled: true }; // Attempting to reassign the student3 object
+  } catch (error) {
+    console.error("Error:", error.message);
+  } finally {
+    console.log(student3); // Output: { name: "John", age: 30, favoriteLanguage: "Java", isEnrolled: false }
+  }
+}
