@@ -12,8 +12,9 @@ switch (day) {
         console.log("It's the start of the week.");
         break;
     default:
-        console.log("It's a normal day.");
+        console.log("It's a normal day."); 
 }
+// normal day becuase caps
 ```
 
 ## 2. Build an ATM Cash Withdrawal System

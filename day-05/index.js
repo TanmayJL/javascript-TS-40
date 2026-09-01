@@ -99,14 +99,16 @@ do {
 
 // Infinite Loop
 
-for(;;){
-    console.log("I am looping forever!!!")
+// for(;;){
+//     console.log("I am looping forever!!!")
+// }
+
+// reverse integer
+function reverseInteger(num) {
+    let reversed = 0;
+    while (num !== 0) {
+        let digit = num % 10;
+        reversed = reversed * 10 + digit;
+        num = Math.floor(num / 10);
+    }
 }
-
-while(true) {
-
-}
-
-do {
-    // Code
-} while(true)
