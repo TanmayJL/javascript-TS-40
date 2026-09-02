@@ -1,6 +1,10 @@
 /**
  * Let us play a number guessing game.
- * You will ask user for a number between 1 to 10. Once user will enter a number, you will tell user if the entered number is lower or higher. With this information, user will change the number and finally guess the right number. You also need to show the number of attempts made by users to rach to this right guess.
+ * You will ask user for a number between 1 to 10. Once user will 
+ * enter a number, you will tell user if the entered number is lower
+ * or higher. With this information, user will change the number and 
+ * finally guess the right number. You also need to show the number
+ *  of attempts made by users to rach to this right guess.
  */
 
 // max number
@@ -25,40 +29,41 @@ function startSecretNumberGame() {
     const secretNumber = Math.floor(Math.random() * MAX_NUMBER) + 1;
     let attempts = 0;
     let guess = null;
+    let play = true;
 
     console.log("Welcome to the Number Guessing Game!");
     console.log("Try to guess a number between 1 and 10.");
 
-    while (guess !== secretNumber) {
-        const guessPrompt = prompt("Enter your guess: ");
-        guess = parseInt(guessPrompt);
+    while (play) {
+        while (guess !== secretNumber) {
+            const guessPrompt = prompt("Enter your guess: ");
+            guess = parseInt(guessPrompt);
 
-        if (isNaN(guess) || guess < MIN_NUMBER || guess > MAX_NUMBER) {
-            console.log(`Invalid input! Please enter a number between ${MIN_NUMBER} and ${MAX_NUMBER}.`);
-            continue;
+            if (isNaN(guess) || guess < MIN_NUMBER || guess > MAX_NUMBER) {
+                console.log(`Invalid input! Please enter a number between ${MIN_NUMBER} and ${MAX_NUMBER}.`);
+                continue;
+            }
+
+            attempts++;
+
+            if (guess < secretNumber) {
+                console.log("Too Low! Try again.");
+            } else if (guess > secretNumber) {
+                console.log("Too High! Try again.");
+            } else {
+                console.log(`🎉 Congrats! You guessed the number in ${attempts} attempts.`);
+            }
         }
 
-        attempts++;
-
-        if (guess < secretNumber) {
-            console.log("Too Low! Try again.");
-        } else if (guess > secretNumber) {
-            console.log("Too High! Try again.");
-        } else {
-            console.log(`🎉 Congrats! You guessed the number in ${attempts} attempts.`);
-            break;
+        const playAgainPrompt = prompt("Do you want to play again? (yes/no)");
+        console.log(playAgainPrompt);
+        const playAgain = playAgainPrompt ? playAgainPrompt.toLocaleLowerCase() : "no";
+        play = playAgain === "yes";
+        if (!play) {
+            console.log("Thanks for playing! See you next time.");
+            play = false;
         }
-    }
-
-    const playAgainPrompt = prompt("Do you want to play again? (yes/no)");
-    console.log(playAgainPrompt);
-    const playAgain = playAgainPrompt ? playAgainPrompt.toLocaleLowerCase() : "no";
-    if (playAgain === "yes") {
-        startSecretNumberGame();
-    } else {
-        console.log("Thanks for playing! See you next time.");
     }
 }
-
 // Start the game
 startSecretNumberGame();
